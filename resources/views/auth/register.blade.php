@@ -1,6 +1,6 @@
 @extends('layout.auth')
 
-@section('content')
+@section('isi')
     <section class="bg-gray-100">
         <div class="mx-4 py-4 flex items-center justify-center min-h-screen sm:h-screen">
             <div
@@ -62,7 +62,7 @@
                             class="w-full text-white bg-blue-600 hover:bg-blue-950 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:hover:bg-primary-700 dark:focus:ring-primary-800">Sign
                             in</button>
                         <p class="text-sm font-light text-gray-500 dark:text-gray-400">
-                            you already have an account? <a href="/login"
+                            you already have an account? <a href="{{ route('login-page') }}"
                                 class="font-medium text-primary-600 hover:underline
                                  dark:text-primary-500">Sign
                                 up</a>

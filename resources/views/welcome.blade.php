@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <div class="bg-red-700 h-16 flex items-center justify-between px-4 text-white">
+    <div class="bg-red-700 h-16 flex items-center justify-between px-4 text-white ">
 
         <div class="text-2xl">
             Navbar
@@ -19,13 +19,32 @@
 
         <div class="flex gap-4">
             <div>
-                <a href="/login">Login</a>
+                <a href="{{ route('login-page') }}">Login</a>
             </div>
             <div>
-                <a href="{{ route('register') }}">Register</a>
+                <a href="{{ route('register-page') }}">Register</a>
             </div>
         </div>
     </div>
+
+    <div class="relative min-h-screen flex flex-col h-32">
+        <!-- Konten Utama -->
+
+
+        <!-- Footer -->
+        <div class="fixed bottom-0 left-0 w-full bg-gray-800 text-white p-4 text-center">
+            <h1>
+                Footer
+            </h1>
+        </div>
+    </div>
+
+
+
+
+
+
+
 </body>
 
 </html>

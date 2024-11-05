@@ -5,6 +5,9 @@ namespace Database\Seeders;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Schema;
+use Carbon\Carbon;
 
 class DatabaseSeeder extends Seeder
 {
@@ -15,9 +18,25 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        schema::enableForeignKeyConstraints();
+
+        Schema::disableForeignKeyConstraints();
+
+
+        $users = [
+            [
+                'name' => 'admin',
+                'email' => 'admin@example.com',
+                'role' =>  "admin",
+                'password' => Hash::make('Admin123'),
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ]
+        ];
+
+
+        foreach ($users as $user) {
+            User::create($user);
+        }
     }
 }
